@@ -12,10 +12,10 @@ const { NotImplementedError } = require("../extensions/index.js");
  *
  */
 function deleteDigit(n) {
-  let s = String(n).split(" ").map(Number);
+  let s = String(n).split("").map(Number);
   return Math.max(
     ...s.map((el, i) => {
-      let r = s.slice();
+      let r = [...s];
       r.splice(i, 1);
       return Number(r.join(""));
     })
